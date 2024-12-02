@@ -10,17 +10,17 @@ import { MiniAppContext } from "../../routes/MiniAppContextProvider";
 
 const BottomNavBar: React.FC = () => {
   const location = useLocation();
-  const {isToggled} = useContext(MiniAppContext);
+  const {isToggled} = useContext(MiniAppContext); 
   const navItems = [
-    { icon: HomeIcon, label: "Home", path: "/" },
-    { icon: AgentIcon, label: "Agents", path: "/agents" },
-    { icon: WorkspaceIcon, label: "Workforce", path: "/workforce" },
-    { icon: EarnIcon, label: "Earn", path: "/earn" },
-    { icon: AirdropIcon, label: "Airdrop", path: "/airdrop" },
+    { icon: HomeIcon, label: "Задания", path: "/" },
+    { icon: AgentIcon, label: "Финансы", path: "/agents" },
+    { icon: WorkspaceIcon, label: "Вакансии", path: "/workforce" },
+    { icon: EarnIcon, label: "Еще", path: "/earn" },
+    { icon: AirdropIcon, label: "Назад", path: "/airdrop" },
   ];
-
+  
   return (
-    <nav className={`fixed bottom-4 left-4 right-4 bg-gradient-to-b from-[#000000] to-[#0F1F3D] border-[1px] border-[#FFFFFF40] rounded-3xl z-40 ${isToggled ? "hidden": "block"} `}>
+    <nav className={`fixed bottom-0 left-0 right-0 bg-black border-[1px] border-[#FFFFFF40] rounded-t-3xl `}>
       <div className="flex justify-around items-center p-3">
         {navItems.map((item, idx) => {
           const Icon = item.icon;
@@ -42,7 +42,7 @@ const BottomNavBar: React.FC = () => {
                 <Icon
                   selected={location.pathname === item.path ? true : false}
                 />
-                {/* <span className="text-xs mt-1">{item.label}</span> */}
+                <span className="text-xs mt-1 text-white">{item.label}</span>
               </Link>
             </div>
           );

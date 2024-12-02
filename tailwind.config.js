@@ -49,6 +49,9 @@ export default {
                     '100%': { transform: 'translateX(0%)' }
                 },
             },
+            colors: {
+                'dark-blue': '#133060', // Custom color
+            },
         },
     },
     plugins: [formsPlugin],

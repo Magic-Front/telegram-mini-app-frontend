@@ -12,6 +12,7 @@ import Earn from "../pages/Earn";
 import Tmp3 from "../pages/Tmp3";
 import Tmp4 from "../pages/Tmp4";
 import Workforce from "../pages/Workforce";
+import VacancyOpen from "../pages/VacancyOpen";
 
 const getRouteElementPublic = (
   Component: React.ElementType
@@ -35,6 +36,7 @@ const routes: RouteObject[] = [
   { path: "/settings", element: getRouteElementPublic(Tmp3) },
   { path: "/settings/languages", element: getRouteElementPublic(Tmp4) },
   { path: "/workforce", element: getRouteElementPublic(Workforce) },
+  { path: "/vacancy_open", element: getRouteElementPublic(VacancyOpen) },
 ];
 
 const Router = createBrowserRouter(routes);
