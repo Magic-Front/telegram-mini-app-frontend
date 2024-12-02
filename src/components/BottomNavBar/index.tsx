@@ -1,16 +1,13 @@
 import React from "react";
-import {useContext} from 'react';
 import AgentIcon from "../icons/agent";
 import AirdropIcon from "../icons/airdrop";
 import HomeIcon from "../icons/home";
 import EarnIcon from "../icons/earn";
 import WorkspaceIcon from "../icons/workspace";
 import { Link, useLocation } from "react-router-dom";
-import { MiniAppContext } from "../../routes/MiniAppContextProvider";
 
 const BottomNavBar: React.FC = () => {
   const location = useLocation();
-  const {isToggled} = useContext(MiniAppContext); 
   const navItems = [
     { icon: HomeIcon, label: "Задания", path: "/" },
     { icon: AgentIcon, label: "Финансы", path: "/agents" },

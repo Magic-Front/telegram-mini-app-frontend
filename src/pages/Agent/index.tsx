@@ -1,32 +1,10 @@
-import React, { useState, useContext } from "react";
-import { LabelTaskModal, AnnotationTaskModal, RewardModal } from '../Tasks';
-import { MiniAppContext } from "../../routes/MiniAppContextProvider";
-import { Task } from "../../routes/types";
+import { useState } from "react";
 import TonCard from "./toncard";
+
 const Home = () => {
-  const [currentTab, setCurrentTab] = useState("DeTask");
-  const { isToggled, setToggle, coins, setCoins, power, setPower, currentUser, setCurrentUser, tasks } = useContext(MiniAppContext);
-  const [isFinished, setFinished] = useState(true);
-  const [index, setIndex] = useState("");
-  const task = tasks.filter((task: Task) => task._id === index)[0];
+  const [currentTab, setCurrentTab] = useState("");
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const handleFinish = () => {
-    setToggle(true);
-    setFinished(true);
-  };
-
-  const handleGetReward = () => {
-    if (task?.reward[0] > 0) {
-      setCoins(coins + task.reward[0]);
-      setCurrentUser({ ...currentUser, coins: currentUser.coins + task.reward[0] });
-    }
-    if (task?.reward[1] > 0) {
-      setPower(power + task.reward[1]);
-      setCurrentUser({ ...currentUser, power: currentUser.power + task.reward[1] });
-    }
-    setToggle(false);
-  };
-
+ 
   const handleButtonClick = (index: number) => {
     setActiveIndex(index);
     setCurrentTab(index === 0 ? "" : index === 1 ? "" : "");
@@ -98,13 +76,6 @@ const Home = () => {
           )}
         </div>
       </div>
-
-      {index !== "" && task?.type === "data_labeling" ? 
-        (<LabelTaskModal isOpen={isToggled && !isFinished} onClose={() => setToggle(false)} taskIndex={index} onFinish={handleFinish} />) : 
-        (index !== "" && task?.type === "Annotation" ? 
-          (<AnnotationTaskModal isOpen={isToggled && !isFinished} onClose={() => setToggle(false)} taskIndex={index} onFinish={handleFinish} />) : 
-          (<div></div>))}
-      <RewardModal isOpen={isToggled && isFinished} onClose={() => setToggle(false)} taskIndex={index} onFinish={handleGetReward} />
     </main>
 
   );

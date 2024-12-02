@@ -1,33 +1,10 @@
-import React, { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LabelTaskModal, AnnotationTaskModal, RewardModal } from '../Tasks';
-import { MiniAppContext } from "../../routes/MiniAppContextProvider";
-import { Task } from "../../routes/types";
 import VacancyCard from "./vacancy";
 
 const Home = () => {
-  const [currentTab, setCurrentTab] = useState("DeTask");
-  const { isToggled, setToggle, coins, setCoins, power, setPower, currentUser, setCurrentUser, tasks } = useContext(MiniAppContext);
-  const [isFinished, setFinished] = useState(true);
-  const [index, setIndex] = useState("");
-  const task = tasks.filter((task: Task) => task._id === index)[0];
+  const [currentTab, setCurrentTab] = useState("");
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const handleFinish = () => {
-    setToggle(true);
-    setFinished(true);
-  };
-
-  const handleGetReward = () => {
-    if (task?.reward[0] > 0) {
-      setCoins(coins + task.reward[0]);
-      setCurrentUser({ ...currentUser, coins: currentUser.coins + task.reward[0] });
-    }
-    if (task?.reward[1] > 0) {
-      setPower(power + task.reward[1]);
-      setCurrentUser({ ...currentUser, power: currentUser.power + task.reward[1] });
-    }
-    setToggle(false);
-  };
 
   const handleButtonClick = (index: number) => {
     setActiveIndex(index);
@@ -82,8 +59,7 @@ const Home = () => {
                     title="Back-end разработчик"
                     description="Требуется back-end разработчик для создания и поддержки серверной части веб-приложений. Необходим опыт работы с Node.js и MongoDB. Постоянная удалённая работа, возможны краткосрочные проекты."
                     type="Удалённая работа"
-                />
-                
+                />    
             </div>
           )}
           {activeIndex === 1 && (
@@ -95,13 +71,6 @@ const Home = () => {
           )}
         </div>
       </div>
-
-      {index !== "" && task?.type === "data_labeling" ? 
-        (<LabelTaskModal isOpen={isToggled && !isFinished} onClose={() => setToggle(false)} taskIndex={index} onFinish={handleFinish} />) : 
-        (index !== "" && task?.type === "Annotation" ? 
-          (<AnnotationTaskModal isOpen={isToggled && !isFinished} onClose={() => setToggle(false)} taskIndex={index} onFinish={handleFinish} />) : 
-          (<div></div>))}
-      <RewardModal isOpen={isToggled && isFinished} onClose={() => setToggle(false)} taskIndex={index} onFinish={handleGetReward} />
     </main>
 
   );
