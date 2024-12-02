@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Cad from "./cad";
 import OngoingTask from "./ongoing"
 
 const Home = () => {
   const [currentTab, setCurrentTab] = useState("");
+  
   const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  useEffect(()=>{
+    setCurrentTab(currentTab);
+  },[])
 
   const handleButtonClick = (index: number) => {
     setActiveIndex(index);

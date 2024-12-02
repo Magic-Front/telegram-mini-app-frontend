@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import VacancyCard from "./vacancy";
 
 const Home = () => {
   const [currentTab, setCurrentTab] = useState("");
   const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  useEffect(()=>{
+    setCurrentTab(currentTab);
+  },[])
 
   const handleButtonClick = (index: number) => {
     setActiveIndex(index);
