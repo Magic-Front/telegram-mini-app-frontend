@@ -9,7 +9,7 @@ interface TaskCardProps {
 
 const TaskCard: React.FC<TaskCardProps> = ({ imageSrc, title, reward, author }) => {
   return (
-    <div className="flex bg-cover bg-center bg-no-repeat items-center bg-[url('/images/background/job_item_bg.png')] text-white p-3 rounded-lg mb-1 w-80">
+    <div className="flex bg-cover bg-center bg-no-repeat items-center bg-[url('/images/background/job_item_bg.png')] text-white p-3 rounded-lg mb-1 w-full">
       <img
         src={imageSrc}
         alt={title}
