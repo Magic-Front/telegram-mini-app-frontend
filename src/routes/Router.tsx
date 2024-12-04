@@ -13,6 +13,11 @@ import Tmp3 from "../pages/Tmp3";
 import Tmp4 from "../pages/Tmp4";
 import Workforce from "../pages/Workforce";
 import VacancyOpen from "../pages/VacancyOpen";
+import NewVacancy from "../pages/NewVacancy";
+import Prices from "../pages/Prices";
+import Profile from "../pages/Profile";
+import Jalopa from "../pages/Jalopa";
+// import Chat from "../pages/Chat";
 
 const getRouteElementPublic = (
   Component: React.ElementType
@@ -37,6 +42,11 @@ const routes: RouteObject[] = [
   { path: "/settings/languages", element: getRouteElementPublic(Tmp4) },
   { path: "/workforce", element: getRouteElementPublic(Workforce) },
   { path: "/vacancy_open", element: getRouteElementPublic(VacancyOpen) },
+  { path: "/new_vacancy", element: getRouteElementPublic(NewVacancy) },
+  { path: "/price", element: getRouteElementPublic(Prices) },
+  { path: "/profile", element: getRouteElementPublic(Profile) },
+  { path: "/jalopa", element: getRouteElementPublic(Jalopa) },
+  // { path: "/chat", element: getRouteElementPublic(Chat) },
 ];
 
 const Router = createBrowserRouter(routes);

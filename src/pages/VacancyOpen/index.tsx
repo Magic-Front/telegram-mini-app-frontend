@@ -52,6 +52,9 @@ const VacancyOpen = () => {
             condition_descr="Удаленный формат, можно совмещать с учебой или основной работой, ежедневная оплата. "
             work_type="Удаленная работа"
           />
+          <button className="bg-blue-600 rounded-lg w-80">
+            Связаться
+          </button>
         </div>
       </div>
     </main>
