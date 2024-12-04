@@ -23,7 +23,7 @@ const Home = () => {
           <div className="ml-[30px]">
             <img src="/images/alert.png" />
           </div>  
-          <div className="flex justify-center h-10 bg-[#1a1f36] rounded-[10px] overflow-hidden w-fit mx-auto">
+          <div className="flex justify-center h-10 bg-[#1a1f36] rounded-[10px] overflow-hidden w-fit mx-auto border-dark-blue border-[1px]">
             <button
               className={`px-5 py-2 text-white text-sm transition-all duration-300 ${
                 activeIndex === 0

@@ -7,14 +7,15 @@ interface TaskCardProps {
 
 const TaskCard: React.FC<TaskCardProps> = ({ ton_amount, usdt_amount }) => {
   return (
-    <div className="bg-cover bg-center bg-no-repeat bg-dark-blue h-full p-4 rounded-lg shadow-md mb-3 w-80">
+    <div className="bg-cover bg-center bg-no-repeat bg-dark-blue h-full p-4 rounded-lg shadow-md mb-3 w-full mt-5">
       <p className="text-grey">Мой баланс</p>
-      <div className="flex">
+      <div className="flex mt-1">
         <img className="pr-3" src="/images/ton.png" />
-        <p className="text-lg text-white">{ton_amount} TON</p>
-      </div><div className="flex">
+        <p className="text-[30px] text-white">{ton_amount} TON</p>
+      </div>
+      <div className="flex mt-3">
         <img className="pr-3" src="/images/usdt.png" />
-        <p className="text-lg text-white">{usdt_amount} USDT</p>
+        <p className="text-[30px] text-white">{usdt_amount} USDT</p>
       </div>
     </div>
   );
