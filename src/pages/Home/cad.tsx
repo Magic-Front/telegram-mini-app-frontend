@@ -9,7 +9,7 @@ interface TaskCardProps {
 
 const TaskCard: React.FC<TaskCardProps> = ({ title, description, reward, timeLeft }) => {
   return (
-    <div className="bg-cover bg-center bg-no-repeat bg-[url('/images/background/job_item_bg.png')] text-white w-full h-full p-4 rounded-lg shadow-md mb-3 w-90">
+    <div className="bg-cover bg-center bg-no-repeat bg-[url('/images/background/job_item_bg.png')] text-white w-full h-full p-4 rounded-lg shadow-md mb-3 w-full">
       <h2 className="text-lg font-semibold mb-2 truncate">{title}</h2>
       <p className="text-lg text-[#b0b3c1] mb-4">{description}</p>
       <img className="mb-3 w-full" src="/images/white_line.png" />

@@ -17,6 +17,7 @@ import NewVacancy from "../pages/NewVacancy";
 import Prices from "../pages/Prices";
 import Profile from "../pages/Profile";
 import Jalopa from "../pages/Jalopa";
+import Task from "../pages/Task";
 // import Chat from "../pages/Chat";
 
 const getRouteElementPublic = (
@@ -46,6 +47,7 @@ const routes: RouteObject[] = [
   { path: "/price", element: getRouteElementPublic(Prices) },
   { path: "/profile", element: getRouteElementPublic(Profile) },
   { path: "/jalopa", element: getRouteElementPublic(Jalopa) },
+  { path: "/task", element: getRouteElementPublic(Task) },
   // { path: "/chat", element: getRouteElementPublic(Chat) },
 ];
 

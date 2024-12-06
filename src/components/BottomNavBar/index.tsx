@@ -10,7 +10,7 @@ const BottomNavBar: React.FC = () => {
     { icon: "/images/tab/finance.png", label: "Финансы", path: "/agents" },
     { icon: "/images/tab/vacancy.png", label: "Вакансии", path: "/workforce" },
     { icon: "/images/tab/more.png", label: "Еще", path: "/earn" },
-    { icon: "/images/tab/back.png", label: "Назад", action: () => navigate(-1) }, // Navigate to previous page
+    { icon: "/images/tab/back.png", label: "Назад", action: () => navigate(-1) },
   ];
 
   return (
@@ -34,25 +34,25 @@ const BottomNavBar: React.FC = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className="flex flex-col items-center py-2 px-3"
+                className="flex justify-center flex-col items-center py-2 px-3"
               >
                 <img
                   src={item.icon}
                   alt={item.label}
-                  className={`w-6 h-6 ${
+                  className={`w-7 h-7 ${
                     location.pathname === item.path ? "opacity-100" : "opacity-60"
                   }`}
                 />
-                <span className="text-xs mt-1 text-white">{item.label}</span>
+                <span className="text-[14px] mt-1 text-white">{item.label}</span>
               </Link>
             ) : (
-              <div className="flex flex-col items-center py-2 px-3 cursor-pointer">
+              <div className="flex justify-center flex-col items-center py-2 px-3 cursor-pointer">
                 <img
                   src={item.icon}
                   alt={item.label}
-                  className="w-6 h-6 opacity-60"
+                  className="w-7 h-7 opacity-60"
                 />
-                <span className="text-xs mt-1 text-white">{item.label}</span>
+                <span className="text-[14px] mt-1 text-white">{item.label}</span>
               </div>
             )}
           </div>
